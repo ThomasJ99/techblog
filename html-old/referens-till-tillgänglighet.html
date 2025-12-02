@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exempel: Semantisk & Tillgänglig Sida</title>
+  <style>
+    /* Enkel styling för fokus och kontrast (behåll synlig fokus!) */
+    :focus { outline: 3px solid Highlight; outline-offset: 2px; }
+    a.skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      background: #000;
+      color: #fff;
+      padding: 0.5rem;
+      z-index: 100;
+    }
+    a.skip-link:focus { left: 1rem; top: 1rem; }
+    header, main, nav, footer, article, aside, section {
+      padding: 1rem;
+    }
+    nav ul { list-style: none; padding: 0; margin: 0; display:flex; gap:1rem; }
+    .visually-hidden {
+      position: absolute !important;
+      height: 1px; width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+    }
+    /* Enkel layout */
+    .container { max-width: 900px; margin: 0 auto; }
+    .error { color: #b00020; }
+    .form-row { margin-bottom: 0.75rem; }
+  </style>
+</head>
+<body>
+  <!-- Skip-link för tangentbordsanvändare -->
+  <a href="#main-content" class="skip-link">Hoppa till innehåll</a>
+
+  <header role="banner" class="container" aria-label="Topp">
+    <h1>Min tillgängliga webbplats</h1>
+    <p class="visually-hidden" id="site-description">Exempel på semantisk HTML och WCAG-vänliga mönster.</p>
+
+    <!-- Navigation: använd <nav> och meningsfulla länkar -->
+    <nav role="navigation" aria-label="Huvudmeny">
+      <ul>
+        <li><a href="#main-content">Start</a></li>
+        <li><a href="#about">Om</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main landmark med id för skip-link -->
+  <main id="main-content" role="main" class="container">
+    <article aria-labelledby="article1-title">
+      <header>
+        <h2 id="article1-title">Introduktion till semantik</h2>
+        <p>Den här artikeln visar hur man använder semantiska element och tillgänglighetsattribut.</p>
+      </header>
+
+      <section aria-labelledby="sec-features">
+        <h3 id="sec-features">Viktiga principer</h3>
+        <ul>
+          <li>Använd riktiga HTML-element (ej bara <code>div</code> och <code>span</code>).</li>
+          <li>Säkerställ tillräcklig kontrast och synliga fokusstilar.</li>
+          <li>Se till att allt innehåll är nåbart via tangentbord.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="sec-form" id="contact" >
+        <h3 id="sec-form">Kontaktformulär</h3>
+
+        <!-- Form: labels, aria-describedby för fel, aria-required -->
+        <form action="/skicka" method="post" novalidate>
+          <div class="form-row">
+            <label for="name">Namn</label>
+            <input id="name" name="name" type="text" required aria-required="true" />
+          </div>
+
+          <div class="form-row">
+            <label for="email">E-post</label>
+            <input id="email" name="email" type="email" required aria-required="true"
+                   aria-describedby="email-help email-error" />
+            <div id="email-help" class="visually-hidden">Vi skickar inget spam.</div>
+            <!-- Felmeddelande: dolt tills det behövs, kopplat via aria-describedby -->
+            <div id="email-error" class="error" aria-live="polite" hidden>
+              Ange en giltig e-postadress.
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Meddelande</label>
+            <textarea id="message" name="message" rows="6"></textarea>
+          </div>
+
+          <div class="form-row">
+            <button type="submit">Skicka</button>
+          </div>
+        </form>
+      </section>
+    </article>
+
+    <aside aria-labelledby="aside-heading" class="container" role="complementary">
+      <h3 id="aside-heading">Sidomeny</h3>
+      <p>Kompletterande information, länkar eller kontaktuppgifter.</p>
+    </aside>
+  </main>
+
+  <footer role="contentinfo" class="container">
+    <p>© 2025 — Exempelsida</p>
+  </footer>
+
+  <!-- Exempel på enkelt skript för klient-validering (tillgängligt) -->
+  <script>
+    (function() {
+      const form = document.querySelector('form');
+      const email = document.getElementById('email');
+      const emailError = document.getElementById('email-error');
+
+      form.addEventListener('submit', function(e) {
+        // enkel validering — visa fel via aria och aria-describedby
+        if (!email.checkValidity()) {
+          e.preventDefault();
+          email.setAttribute('aria-invalid', 'true');
+          emailError.hidden = false;
+          email.focus();
+        } else {
+          email.removeAttribute('aria-invalid');
+          emailError.hidden = true;
+        }
+      });
+
+      // Rensa fel när användaren skriver
+      email.addEventListener('input', function() {
+        if (email.checkValidity()) {
+          email.removeAttribute('aria-invalid');
+          emailError.hidden = true;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

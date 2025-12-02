@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TechBlog — Featured</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/codestyle.css" />
+</head>
+<!--Om text inte är i main, kan det ses som globalt-->
+<body>
+    <header class="container header-inner">
+        <a  href="/">TechBlog</a>
+        <nav aria-label="Primary" class="main-nav">
+            <ul role="list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="/subscribe" class="btn btn-primary">Subscribe</a>
+
+    </header>
+<!-- Om den sitter utanför main vill vi då ha denna dyka upp på flera sidor -->
+    <section aria-labelledby="heading-1" class="hero">
+        <div class="container hero-inner">
+            <h1 id="heading-1">Welcome to TechBlog</h1>
+            <p class="lead">Discover the latest insights in web development, design, and technology</p>
+            <search>
+                <form class="search">
+                    <label for="article-search">
+                        <span class="sr-only">Search articles</span>
+                    </label>
+                    <input id="article-search" aria-label="Search articles" placeholder="Search articles..." />
+                </form>
+            </search>
+        </div>
+    </section>
+
+    <main class="container layout">
+        <div class="flow">
+            <header class="section-head">
+                <h2>Featured articles</h2>
+                <p class="muted">Latest insights and tutorials from our expert writers</p>
+            </header>
+
+            <article aria-labelledby="article-heading-1" class="card">
+                <img src="https://www.figma.com/api/mcp/asset/a5104b48-336f-4657-9c3a-bc3fd2c352a4"
+                    alt="Article image" />
+                <div class="card-body">
+                    <header>
+                        <div class="meta-row">
+                            <span class="badge text-sm text-semibold blue">Web Development</span>
+                            <time class="muted">January 15, 2024</time>
+                        </div>
+                        <h3 id="article-heading-1" class="card-title">Modern CSS Grid techniques for responsive design</h3>
+                    </header>
+                    <div>
+                        <p class="muted">Learn how to create flexible and responsive layouts using the latest CSS Grid
+                            features. This
+                            comprehensive guide covers everything from basic grid concepts to advanced techniques.</p>
+                        <a href="/" class="pb-2">Read more...</a>
+                    </div>
+                    <footer class="card-footer">
+                        <div class="author">
+                            <img class="avatar"
+                                src="https://www.figma.com/api/mcp/asset/0953e1d4-e3c1-4e54-b241-c965352e2a52"
+                                alt="" />
+                            <div>
+                                <div class="text-semibold">John Smith</div>
+                                <div class="text-sm muted">Senior Developer</div>
+                            </div>
+                        </div>
+                        <div class="text-sm muted">8 min read</div>
+                    </footer>
+                </div>
+            </article>
+
+            <article class="card">
+
+                <img src="https://www.figma.com/api/mcp/asset/8886908e-3141-42ef-bda9-658c5dfa422c"
+                    alt="Article image" />
+                <div class="card-body">
+                    <div class="meta-row">
+                        <span class="badge text-sm text-semibold green">Accessibility</span>
+                        <time class="muted">January 12, 2024</time>
+                    </div>
+                    <h3 class="card-title">Building accessible web applications: a complete guide</h3>
+                    <p class="muted">Discover essential techniques for creating inclusive web experiences. From semantic
+                        HTML to
+                        ARIA attributes, learn how to make your applications accessible to all users.</p>
+                    <h4>Team Member Skills</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Primary Skill</th>
+                                <th scope="col">Experience (Years)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Alice</th>
+                                <td>Frontend Development</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Bob</th>
+                                <td>Backend Development</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>Charlie</th>
+                                <td>UI/UX Design</td>
+                                <td>6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="/" class="pb-2">Read more...</a>
+                    <div class="card-footer">
+                        <div class="author">
+                            <img class="avatar"
+                                src="https://www.figma.com/api/mcp/asset/bf55a732-ab15-46d0-a525-5f09dfe3c6a4"
+                                alt="Sarah Johnson" />
+                            <div>
+                                <div class="text-semibold">Sarah Johnson</div>
+                                <div class="text-sm muted">UX Engineer</div>
+                            </div>
+                        </div>
+                        <div class="text-sm muted">12 min read</div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer flow">
+        <div class="container footer-inner">
+            <section>
+                <h4>TechBlog</h4>
+                <p class="muted">Sharing knowledge and insights about web development, design, and technology.</p>
+            </section>
+            <section>
+                <h4>Quick Links</h4>
+                <ul class="muted small link-list">
+                    <li><a href="/">About Us</a></li>
+                    <li>Contact</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                </ul>
+            </section>
+            <section>
+                <h4>Categories</h4>
+                <ul class="muted small link-list">
+                    <li>Web Development</li>
+                    <li>Design</li>
+                    <li>Accessibility</li>
+                    <li>JavaScript</li>
+                </ul>
+            </section>
+            <h4>Contact Info</h4>
+            <address>  
+                <a href="mailto:hello@techblog.com" class="muted small">hello@techblog.com</p>
+                <a href="tel:+1234567890" class="muted small">+1 (234) 567-890</a>
+            </address>
+        </div>
+        <div class="container footer-bottom muted small"> 2025 TechBlog. All rights reserved.</div>
+    </footer>
+</body>
+
+</html>
