@@ -25,6 +25,8 @@
     /*Other*/
 }
 
+/*Functions*/
+
 body {
     font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial,
         sans-serif;
@@ -50,6 +52,8 @@ h3 {
     font-size: var(--fs-xs);
 }
 
+/*BLOCK ELEMENTS*/
+
 header {
     display: flex;
     justify-content: space-between;
@@ -71,6 +75,10 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
+}
+
+.flow>*+* {
+    margin-block-start: 1.5rem;
 }
 
 /* Hides text but is still readable for screnreader */
