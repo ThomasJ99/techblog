@@ -3,35 +3,50 @@
     <meta charset="utf-8">
     <meta lang="en">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
     <title>Welcome To Techblog</title>
 </head>
 
 <body>
-    <header>
+    <header class="header-container">
         <a href="/html-old/index.html">TechBlog</a>
-        <nav>
+        <nav class="head-nav">
             <ul>
-                <li><a href="links">Home</a></li>
-                <li><a href="links">About</a></li>
-                <li><a href="links">Categories</a></li>
-                <li><a href="links">Contact</a></li>
+                <li><a href="/html-old/index.html">Home</a></li>
+                <li><a href="/html-old/index.html">About</a></li>
+                <li><a href="/html-old/index.html">Categories</a></li>
+                <li><a href="/html-old/index.html">Contact</a></li>
             </ul>
         </nav>
-        <button>
+    <!-- <a href=""> instead of a button if it links to somewhere -->
+        <button class="primary-button">
             &#128276;Subscribe
         </button>
     </header>
+
+     <article class="banner-hero" aria-labelledby="heading-1">
+        <div>
+            <h1 id="heading-1">Welcome to TechBlog</h1>
+            <p>Discover the latest insights in 
+               web development, design, and technology
+            </p>
+            <section>
+                <form class="search">
+                    <!-- for makes it more accessible -->
+                    <label for="article-search">
+                        <span class="sr-only">Search articles</span>
+                    </label>
+                    <input id="article-search" aria-label="Search articles">
+                </form>
+            </section>
+        </div>
+    </article>
     <main>
-        <article class="banner-background banner-text">
-                <!-- CSS kod för bakgrund, spacing och alignment -->
-                <h1>
-                    Welcome to TechBlog 
-                </h1>
-                <p>Discover the latest blabla</p>
-                <input type="text">
-        </article>
+       
             <section>
                 <h2>Featured Articles</h2>
                 <p>Latest insights</p>

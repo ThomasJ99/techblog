@@ -1,5 +1,53 @@
 :root {
-    --clr-primary: #fff;
+    /*GLOBAL VARIABLES*/
+
+    /*Colors*/
+    --clr-blue-1: #2563EB;
+    --clr-blue-2: #1E40AF;
+    --clr-black-h:#111827;
+    --clr-gray-1: #b2b9c5;
+    --clr-gray-2: #9CA3AF;
+    --clr-white-1:#ffffff;
+    --clr-white-2:#F9FAFB;
+
+    /*Fonts*/
+    /*Font sizes*/
+    --fs-xs:0.75rem; /*Super tiny gray text*/
+    --fs-sm: 0.875rem; /*Tiny gray text*/
+    --fs-l: 1.25rem; /*Banner paragraph text*/ /*h3 text*/
+    --fs-xl: 1.5rem; /*h2 text*/
+    --fs-xxl: 2.25rem; /*h1 text*/
+
+    /*Font weights*/
+    --fw-norm: 400;
+    --fw-heavy: 900; /*Bold*/
+
+    /*Other*/
+}
+
+body {
+    font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial,
+        sans-serif;
+}
+
+h1 {
+    font-size: var(--fs-xxl);
+}
+
+h2 {
+    font-size: var(--fs-xl);
+}
+
+h3 {
+    font-size: var(--fs-l);
+}
+
+.subtle-text {
+    font-size: var(--fs-sm);
+}
+
+.very-subtle-text {
+    font-size: var(--fs-xs);
 }
 
 header {
@@ -23,4 +71,15 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
+}
+
+/* Hides text but is still readable for screnreader */
+.sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
