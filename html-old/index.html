@@ -6,36 +6,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Welcome To Techblog</title>
 </head>
 
 <body>
-    <header class="header-container">
-        <a href="/html-old/index.html">TechBlog</a>
-        <nav class="head-nav">
+    <header>
+        <!-- Om jag ska styla något likadant, använd class, annars använd nesting i CSS -->
+        <a href="#">TechBlog</a>
+        <nav>
             <ul>
-                <li><a href="/html-old/index.html">Home</a></li>
-                <li><a href="/html-old/index.html">About</a></li>
-                <li><a href="/html-old/index.html">Categories</a></li>
-                <li><a href="/html-old/index.html">Contact</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     <!-- <a href=""> instead of a button if it links to somewhere -->
-        <button class="primary-button">
-            &#128276;Subscribe
+        <button class="border-radius">
+            &#128276; Subscribe
         </button>
     </header>
 
-     <article class="banner-hero" aria-labelledby="heading-1">
-        <div>
+     <article class="hero-card" aria-labelledby="heading-1">
             <h1 id="heading-1">Welcome to TechBlog</h1>
             <p>Discover the latest insights in 
                web development, design, and technology
             </p>
             <section>
-                <form class="search">
+                <form>
                     <!-- for makes it more accessible -->
                     <label for="article-search">
                         <span class="sr-only">Search articles</span>
@@ -44,8 +44,8 @@
                     placeholder="Search articles...">
                 </form>
             </section>
-        </div>
     </article>
+
     <main>
         <div class="flow">
             <header class="main-header">
@@ -54,16 +54,18 @@
             </header>
                 <!-- Semantisk struktur manual -->
             <article>
-                <img src="../images/computer-image.jpg">
-                    <p>web dev</p>
-                    <time>datum</time>
+                <img src="../images/computer-image.jpg" width="200">
+                    <p>Web Development</p>
+                    <time>January 15, 2024</time>
                 <section>
-                    <h3>modern css rubrik</h3>
+                    <h3>Modern CSS Grid techniques for responsive design</h3>
                     <p>learn how to create....</p>
+                    <p>Read more...</p>
                     <footer>
                             <img alt="Profile picture">
                             <p class="subtle-text">John Smith</p>
                             <p class="very-subtle-text">Senior Developer</p>
+                            <p class="very-subtle-text">8 min read</p>
                     </footer>
                 </section>
             </article> 

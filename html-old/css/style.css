@@ -4,11 +4,12 @@
     /*Colors*/
     --clr-blue-1: #2563EB;
     --clr-blue-2: #1E40AF;
-    --clr-black-h:#111827;
+    --clr-black-1:#111827;
     --clr-gray-1: #b2b9c5;
     --clr-gray-2: #9CA3AF;
+    --clr-gray-3: #4B5563;
     --clr-white-1:#ffffff;
-    --clr-white-2:#F9FAFB;
+    --clr-white-2:#f9fafb;
 
     /*Fonts*/
     /*Font sizes*/
@@ -23,9 +24,12 @@
     --fw-heavy: 900; /*Bold*/
 
     /*Other*/
+    --gap-1: 1rem;
+    --gap-2: 1.25rem;
+
 }
 
-/*Functions*/
+/*Functions*/ 
 
 body {
     font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial,
@@ -52,34 +56,82 @@ h3 {
     font-size: var(--fs-xs);
 }
 
+.gray-text :is(.subtle-text, .very-subtle-text) {
+    color:var(--clr-gray-2);
+}
+
+/*Utility*/ /*Use these on HTML elements for modular styling*/
+
+.border-radius {
+    border-radius: 0.35rem;
+}
+
 /*BLOCK ELEMENTS*/
+/*Style the first link that is active blue!!!!*/
+/*Style Techblog top left with attribute selectors*/
 
 header {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding-block: 10px;
+    justify-content: space-around;
+    padding: var(--gap-1);
+
+    & > a {
+        color: var(--clr-black-1);
+        font-weight: var(--fw-heavy);
+        font-size: var(--fs-xl);
+    }
+    
+    & nav {
+        padding-top: 0.5rem;
+
+        & ul {
+            display: flex;
+            list-style: none;
+            gap: var(--gap-1);
+
+            
+            & li {
+                
+                &:first-child {
+                    color: var(--clr-blue-1);
+                }
+                & a {
+                    color: var(--clr-gray-3);
+                    
+                }
+            }
+        }
+    }
+
+    & button {
+        color: var(--clr-white-2);
+        background-color: var(--clr-blue-1);
+        border: none;
+        padding: 0.45rem 0.75rem 0.45rem 1rem;
+    }
+
 }
 
-.banner-background {
-  height: 50%;
-  background-color: rgb(57, 57, 232);
-  position: relative;
-  padding-bottom: 10px;
+.hero-card {
+    text-align: center;
+    background-color: #1E40AF;
+    padding-block: 3rem;
 }
 
-.banner-text {
-  text-align: center;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-}
 
-.flow>*+* {
+
+
+
+
+
+
+
+
+
+
+/* .flow>*+* {
     margin-block-start: 1.5rem;
-}
+} */
 
 /* Hides text but is still readable for screnreader */
 .sr-only:not(:focus):not(:active) {
