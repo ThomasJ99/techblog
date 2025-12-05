@@ -2,14 +2,33 @@
     /*GLOBAL VARIABLES*/
 
     /*Colors*/
-    --clr-blue-1: #2563EB;
-    --clr-blue-2: #1E40AF;
-    --clr-black-1:#111827;
+    --clr-blue-1: hsl(221, 83%, 53%);
+    --clr-blue-2: hsl(226, 71%, 40%);
+    --clr-black-1:hsl(221, 39%, 11%);
     --clr-gray-1: #b2b9c5;
-    --clr-gray-2: #9CA3AF;
+    --clr-gray-2: hsl(218, 11%, 65%);
     --clr-gray-3: #4B5563;
     --clr-white-1:#ffffff;
     --clr-white-2:#f9fafb;
+    /*Try making 2/3 primary colors and use lightness/shade to derive colors*/
+
+    /*Attempt at relative colors*/
+    --clr-pri:  hsl(221 83% 53%);
+    --clr-sec: hsl(221 39% 11%);
+    --clr-acc: hsl(218, 11%, 65%);
+
+    /*Derived colors*/
+    --clr-pri-hover: hsl(221 83% 53%);
+    --color-primary-muted: hsl(221 71% 40%);
+
+
+
+    /*another attempt*/
+    --primary-h: 221deg;
+    --primary-s: 70%;
+    --primary-l: 50;
+    --primary: hsl(var(--primary-h) var(--primary-s) var(--primary-l));
+
 
     /*Fonts*/
     /*Font sizes*/
@@ -56,11 +75,17 @@ h4 {
 }
 
 
+
 /*Utility*/ /*Use these on HTML elements for modular styling*/
 
 
 .border-radius {
     border-radius: 0.35rem;
+}
+
+.border-round {
+    border-radius: 1rem;
+    padding-inline: 1rem;
 }
 
 .subtle-text {
@@ -75,8 +100,21 @@ h4 {
     color:var(--clr-gray-2);
 }
 
+.card-shadow {
+    box-shadow: 0px 4px 6px #00000052;
+}
+
+.background-clr-blue {
+    background-color: var(--clr-blue-1);
+}
+
+.background-clr-green {
+    background-color: hsl(from (--clr-blue-1));
+}
+
+
 /*BLOCK ELEMENTS*/
-/*Style the first link that is active blue!!!!*/
+/*Style the first link that is active blue!!!!*/ /*basically done*/
 /*Style Techblog top left with attribute selectors __Done__*/
 
 header {
@@ -84,6 +122,7 @@ header {
     justify-content: space-around;
     padding: var(--gap-1);
 
+    /*Styles only direct children*/
     & > a {
         color: var(--clr-black-1);
         font-weight: var(--fw-900);
@@ -100,7 +139,11 @@ header {
             & > li {
                 
                 &:first-child {
-                    color: var(--clr-blue-1);
+                    /* color: var(--clr-blue-1); */
+                    /* color:hsl(from var(--prim-blue) calc(h - 200) calc(s - 10) calc(l + 30)); */
+                    /* color: hsl(from var(--prim-blue) h - 200 s - 10 l + 30); */
+
+                    
                 }
                 
                 & a {
@@ -149,6 +192,90 @@ header {
 }
 
 main {
+    & header {
+        display: block;
+    }
+
+    & .article-card {
+        margin: 3rem;
+        & article {
+
+            & img {
+                width: 100%;
+                object-fit: cover;
+                object-position: top;
+            }
+            & .topic-tag {
+                display: flex;
+                gap: 1rem;
+                padding-left: 1rem;
+                margin-block: 0.75rem;
+                
+                & p {
+                    background-color: #93bef57b;
+                    color: var(--clr-blue-2);
+                }
+            }
+
+            & section {
+                padding-inline: 1rem;
+
+                & footer {
+                    display: flex;
+                    justify-content: space-between;
+                    background-color: yellow;
+                    
+                    & .rand {
+                        display: flex;
+                        background-color: darkviolet;
+
+                        & img {
+                            width: 2.5rem;
+                            border-radius: 50%;
+                        }
+                        
+                        & .author-info {
+
+                        }
+                    }
+
+                    & > p {
+                        background-color: aliceblue;
+                        padding-top: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.container-footer {
+    background-color: #0f1724;
+    color: var(--clr-gray-1);
+    display: flex;
+    flex-wrap: wrap;
+
+    
+    & section {
+
+        & h4 {}
+
+        & p {}
+
+        & ul {
+            padding-left: 0;
+        }
+    }
+    
+    & div {
+        
+        & >:last-child {
+        border-top: 1px solid var(--clr-gray-2);
+        }
+    }
+}
+
+/* main {
     margin-inline: auto;
     max-width: 70rem;
     & div {
@@ -174,39 +301,7 @@ main {
             }
         }
     }
-}
-
-.container-footer {
-    background-color: #0f1724;
-    color: var(--clr-gray-1);
-    display: flex;
-    flex-wrap: wrap;
-
-    
-    & section {
-
-        & h4 {
-        }
-
-        & p {
-
-        }
-
-        & ul {
-            padding-left: 0;
-        }
-    }
-    
-    & div {
-        
-        & >:last-child {
-        border-top: 1px solid var(--clr-gray-2);
-        }
-    }
-}
-
-
-
+} */
 
 
 

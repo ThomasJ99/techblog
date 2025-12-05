@@ -41,7 +41,7 @@
                     <label  for="article-search">
                         <span class="sr-only">Search articles</span>
                     </label>
-                    
+
                     <input class ="border-radius" id="article-search" 
                     aria-label="Search articles" 
                     placeholder="Search articles...">
@@ -50,24 +50,32 @@
     </article>
 
     <main>
-        <div>
-            <header>
-                <h2>Featured articles</h2>
-                <p>Latest insights and tutorials from our expert writers</p>
-            </header>
+        <header>
+            <h2>Featured articles</h2>
+            <p>Latest insights and tutorials from our expert writers</p>
+        </header>
 
+        <div class="article-card card-shadow">
             <article>
-                <img src="../images/computer-image.jpg" width="200">
-                    <p>Web Development</p>
-                    <time>January 15, 2024</time>
+                <img src="pc.png" width="500" height="200">
+                <div class="topic-tag">
+                    <p class="border-round subtle-text">
+                        Web Development
+                    </p>
+                    <time class="very-subtle-text">January 15, 2024</time>
+                </div>
                 <section>
                     <h3>Modern CSS Grid techniques for responsive design</h3>
                     <p>learn how to create....</p>
-                    <p>Read more...</p>
                     <footer>
-                            <img alt="Profile picture">
-                            <p class="subtle-text">John Smith</p>
-                            <p class="very-subtle-text">Senior Developer</p>
+                        <div class="rand">
+                            <img src="pp.jpg" alt="Profile picture">
+                            <div class="author-info">
+                                <p class="subtle-text">John Smith</p>
+                                <p class="very-subtle-text">Senior Developer</p>
+                            </div>
+                        </div>
+                            
                             <p class="very-subtle-text">8 min read</p>
                     </footer>
                 </section>
@@ -146,8 +154,10 @@
                 </address>
             </section>
 
-            <div><p> 2025 TechBlog. All rights reserved.</p></div>
-            <div>Made with love for the community</div>
+            <div>
+                <p> 2025 TechBlog. All rights reserved.</p>
+                <p>Made with love for the community</p>
+            </div>
         </div>
     </footer>
 </body>
