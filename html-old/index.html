@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <!-- Om jag ska styla något likadant, använd class, annars använd nesting i CSS -->
+        <!-- If im gonna style something similar, use class, if not, use nesting in CSS -->
         <a href="#">TechBlog</a>
         <nav>
             <ul>
@@ -34,12 +34,14 @@
             <p>Discover the latest insights in 
                web development, design, and technology
             </p>
+
             <section>
                 <form>
                     <!-- for makes it more accessible -->
                     <label  for="article-search">
                         <span class="sr-only">Search articles</span>
                     </label>
+                    
                     <input class ="border-radius" id="article-search" 
                     aria-label="Search articles" 
                     placeholder="Search articles...">
@@ -48,12 +50,12 @@
     </article>
 
     <main>
-        <div class="flow">
-            <header class="main-header">
+        <div>
+            <header>
                 <h2>Featured articles</h2>
                 <p>Latest insights and tutorials from our expert writers</p>
             </header>
-                <!-- Semantisk struktur manual -->
+
             <article>
                 <img src="../images/computer-image.jpg" width="200">
                     <p>Web Development</p>
@@ -109,21 +111,23 @@
         </div>
     </main>
     
-    <footer>
-        <footer>
+    <footer class="main-footer">
+        <div class="container-footer">
             <section>
                 <h4>TechBlog</h4>
-                <p class="muted">Sharing knowledge and insights about web development, design, and technology.</p>
+                <p>Sharing knowledge and insights about web development, design, and technology.</p>
             </section>
+
             <section>
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="/">About Us</a></li>
+                    <li>About Us</li>
                     <li>Contact</li>
                     <li>Privacy Policy</li>
                     <li>Terms of Service</li>
                 </ul>
             </section>
+
             <section>
                 <h4>Categories</h4>
                 <ul>
@@ -133,14 +137,17 @@
                     <li>JavaScript</li>
                 </ul>
             </section>
-            <h4>Contact Info</h4>
-            <address>  
-                <a href="mailto:hello@techblog.com">hello@techblog.com</p>
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
-            </address>
-        <p> 2025 TechBlog. All rights reserved.</p>
-    </footer>
 
+            <section>
+                <h4>Contact Info</h4>
+                <address>  
+                    <a href="mailto:hello@techblog.com">hello@techblog.com</p>
+                    <a href="tel:+1234567890">+1 (234) 567-890</a>
+                </address>
+            </section>
 
+            <div><p> 2025 TechBlog. All rights reserved.</p></div>
+            <div>Made with love for the community</div>
+        </div>
     </footer>
 </body>

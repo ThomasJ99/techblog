@@ -21,7 +21,7 @@
 
     /*Font weights*/
     --fw-400: 400;
-    --fw-700: 700;
+    --fw-700: 700; /*Semi bold*/
     --fw-900: 900; /*Bold*/
 
     /*Other*/
@@ -30,7 +30,9 @@
 
 }
 
+
 /*Functions*/ 
+
 
 body {
     font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial,
@@ -49,6 +51,18 @@ h3 {
     font-size: var(--fs-l);
 }
 
+h4 {
+    color: var(--clr-white-2);
+}
+
+
+/*Utility*/ /*Use these on HTML elements for modular styling*/
+
+
+.border-radius {
+    border-radius: 0.35rem;
+}
+
 .subtle-text {
     font-size: var(--fs-sm);
 }
@@ -59,12 +73,6 @@ h3 {
 
 .gray-text :is(.subtle-text, .very-subtle-text) {
     color:var(--clr-gray-2);
-}
-
-/*Utility*/ /*Use these on HTML elements for modular styling*/
-
-.border-radius {
-    border-radius: 0.35rem;
 }
 
 /*BLOCK ELEMENTS*/
@@ -87,7 +95,6 @@ header {
 
         & ul {
             display: flex;
-            list-style: none;
             gap: var(--gap-1);
             
             & > li {
@@ -141,8 +148,61 @@ header {
     }
 }
 
-footer {
+main {
+    margin-inline: auto;
+    max-width: 70rem;
+    & div {
+
+        & header {
+            & h2 {
+
+            }
+
+            & p {
+
+            }
+        }
+
+        & article {
+            background-color: var(--clr-white-2);
+
+            & img {
+
+            }
+            & section {
+                
+            }
+        }
+    }
+}
+
+.container-footer {
+    background-color: #0f1724;
+    color: var(--clr-gray-1);
+    display: flex;
+    flex-wrap: wrap;
+
     
+    & section {
+
+        & h4 {
+        }
+
+        & p {
+
+        }
+
+        & ul {
+            padding-left: 0;
+        }
+    }
+    
+    & div {
+        
+        & >:last-child {
+        border-top: 1px solid var(--clr-gray-2);
+        }
+    }
 }
 
 
